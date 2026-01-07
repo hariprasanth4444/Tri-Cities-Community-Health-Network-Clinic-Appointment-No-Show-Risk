@@ -1,0 +1,123 @@
+{
+  "op": "core/operations",
+  "schema": "OpenRefine 3.x",
+  "operations": [
+    {
+      "op": "core/text-transform",
+      "description": "Trim clinic",
+      "engine": {
+        "facets": [],
+        "mode": "row-based"
+      },
+      "columnName": "clinic",
+      "expression": "value.trim()",
+      "onError": "keep-original",
+      "repeat": false,
+      "repeatCount": 1
+    },
+    {
+      "op": "core/text-transform",
+      "description": "Uppercase city",
+      "engine": {
+        "facets": [],
+        "mode": "row-based"
+      },
+      "columnName": "city",
+      "expression": "value.toUppercase()",
+      "onError": "keep-original",
+      "repeat": false,
+      "repeatCount": 1
+    },
+    {
+      "op": "core/text-transform",
+      "description": "Lowercase status",
+      "engine": {
+        "facets": [],
+        "mode": "row-based"
+      },
+      "columnName": "status",
+      "expression": "value.toLowercase()",
+      "onError": "keep-original",
+      "repeat": false,
+      "repeatCount": 1
+    },
+    {
+      "op": "core/text-transform",
+      "description": "Lowercase new_or_return",
+      "engine": {
+        "facets": [],
+        "mode": "row-based"
+      },
+      "columnName": "new_or_return",
+      "expression": "value.toLowercase()",
+      "onError": "keep-original",
+      "repeat": false,
+      "repeatCount": 1
+    },
+    {
+      "op": "core/text-transform",
+      "description": "Titlecase visit_type",
+      "engine": {
+        "facets": [],
+        "mode": "row-based"
+      },
+      "columnName": "visit_type",
+      "expression": "grel:value.toTitlecase()",
+      "onError": "keep-original",
+      "repeat": false,
+      "repeatCount": 1
+    },
+    {
+      "op": "core/mass-edit",
+      "description": "Standardize status",
+      "engine": {
+        "facets": [],
+        "mode": "row-based"
+      },
+      "columnName": "status",
+      "edits": [
+        {
+          "from": [
+            "No-Show",
+            "NO_SHOW",
+            "noshow"
+          ],
+          "to": "no_show"
+        },
+        {
+          "from": [
+            "Show",
+            "SHOW"
+          ],
+          "to": "show"
+        }
+      ]
+    },
+    {
+      "op": "core/column-addition",
+      "description": "Parse date",
+      "engine": {
+        "facets": [],
+        "mode": "row-based"
+      },
+      "newColumnName": "date_parsed",
+      "columnInsertIndex": 0,
+      "baseColumnName": "date",
+      "expression": "toDate(value)",
+      "onError": "set-to-blank"
+    },
+    {
+      "op": "core/column-addition",
+      "description": "Parse booked_date",
+      "engine": {
+        "facets": [],
+        "mode": "row-based"
+      },
+      "newColumnName": "booked_date_parsed",
+      "columnInsertIndex": 1,
+      "baseColumnName": "booked_date",
+      "expression": "toDate(value)",
+      "onError": "set-to-blank"
+    }
+  ]
+}

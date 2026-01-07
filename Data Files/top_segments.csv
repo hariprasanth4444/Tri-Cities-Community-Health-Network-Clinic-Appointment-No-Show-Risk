@@ -1,0 +1,16 @@
+clinic,visit_type,hour_bucket,temp_bucket,no_show_rate_pct,count
+JC-Family,Urgent,PM,Hot,30.4,46
+KPT-South,Primary Care,AM,Hot,28.6,28
+Bristol-TN,Urgent,AM,Hot,27.6,29
+KPT-South,Pediatrics,PM,Hot,26.8,41
+KPT-South,Urgent,PM,Mild,26.1,92
+JC-Medical,Urgent,AM,Hot,25.7,35
+JC-Family,Chronic Care,PM,Hot,25.6,39
+KPT-North,Urgent,AM,Hot,25.6,43
+KPT-South,Urgent,PM,Hot,25.0,36
+Bristol-TN,Primary Care,AM,Hot,24.2,33
+KPT-North,Pediatrics,AM,Hot,23.7,38
+JC-Medical,Chronic Care,PM,Mild,23.5,81
+Abingdon-VA,Chronic Care,PM,Mild,22.9,83
+Bristol-TN,Follow-up,PM,Hot,22.9,35
+JC-Family,Pediatrics,PM,Hot,22.9,35
